@@ -1,2 +1,17 @@
-<h1>Drops#show</h1>
-<p>Find me in app/views/drops/show.html.erb</p>
+<div class="row">
+  <div class="col-lg-12">
+    <h1>詳細</h1>
+    <dl>
+      <dt>タイトル</dt>
+      <dd style="margin:0px 0px 10px 20px"><%= @drop.title %> </dd>
+      <dt>理由</dt>
+      <dd style="margin:0px 0px 10px 20px"><%= @drop.reason %> </dd>
+      <dt>公開鍵</dt>
+      <dd style="margin:0px 0px 10px 20px"><%= @drop.p_key %></dd>
+      <dt>SNS</dt>
+      <dd style="margin:0px 0px 10px 20px"><%= @drop.sns %> </dd>
+    </dl>
+    <%= link_to '編集', edit_drop_path(@drop), class: "btn btn-default" %>
+    <%= link_to '戻る', drops_path, class: "btn btn-default" %>
+  </div>
+</div>

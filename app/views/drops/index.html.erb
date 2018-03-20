@@ -1,2 +1,33 @@
-<h1>Drops#index</h1>
-<p>Find me in app/views/drops/index.html.erb</p>
+<div class="row">
+  <div class="col-lg-12">
+    <h1>Drop一覧</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-6">
+    <p>Drop情報が表示されます。</p>
+  </div>
+  <div class="col-lg-6">
+    <%= link_to '新規作成', new_drop_path, class: "btn btn-default pull-right" %>
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <th>タイトル</th>
+      <th>理由</th>
+      <th>公開鍵</th>
+      <th>SNS</th>
+    </thead>
+    <tbody>
+      <% @drops.each do |drop| %>
+        <tr>
+          <td><%= drop.title %></td>
+          <td><%= drop.reason %></td>
+          <td><%= drop.p_key %></td>
+          <td><%= drop.sns %></td>
+          <td><%= link_to '詳細', @drop, class: "btn btn-default btn-xs" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+    <%= paginate @customers %>
+</div>
